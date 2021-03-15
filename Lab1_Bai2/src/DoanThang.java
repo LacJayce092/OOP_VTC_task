@@ -4,6 +4,7 @@ public class DoanThang {
     Diem diem;
     String name;
 
+
     public Diem getDiem() {
         return diem;
     }
@@ -23,7 +24,8 @@ public class DoanThang {
     public DoanThang() {
     }
 
-    public DoanThang(Diem diem, Diem diem2) {
+    public DoanThang(String name ,Diem diem, Diem diem2) {
+        this.name = name;
         this.diem = diem;
         this.diem = diem2;
     }
@@ -40,6 +42,20 @@ public class DoanThang {
     public String toString(Diem diem, Diem diem2){
         return diem.name + diem2.name + "[(" + diem.x + "," + diem.y + ")]"
                 +"," + "[(" + diem.y + "," + diem2.y + ")]";
+    }
+
+    public static void songSong(Diem diemA, Diem diemB,Diem diemC,Diem diemD){
+        boolean answer = false;
+        if((diemA.x - diemB.x) / (diemA.y - diemB.y) ==
+                (diemC.x - diemD.x) / (diemC.y - diemD.y)){
+            answer = true;
+        }else
+            answer = false;
+        if(answer == true)
+            System.out.printf("Hai doan thang song song");
+        if(answer == false)
+            System.out.printf("Hai doan thang ko song song");
+        System.out.println();
     }
 }
 
